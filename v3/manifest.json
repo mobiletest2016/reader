@@ -1,0 +1,31 @@
+{
+  "name": "Reader",
+  "description": "Read PDF/URL",
+  "manifest_version": 3,
+  "version": "1.0",
+  "permissions": [
+    "activeTab", "tabs", "storage", "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [{
+  "resources": ["pdf/*.pdf"],
+  "matches": ["<all_urls>"] 
+  }],
+   "action": {
+    "default_title": "Reader",
+    "default_icon": "book.png",
+    "default_popup": "popup.html"
+  },
+  "commands": {
+	"toggle" : {
+		"suggested_key": { "default" : "Ctrl+X" },
+		"description": "Toggle"
+	},
+	"hide": {
+		"suggested_key": { "default" : "Ctrl+Space" },
+		"description": "Hide"
+	}
+  }
+}
